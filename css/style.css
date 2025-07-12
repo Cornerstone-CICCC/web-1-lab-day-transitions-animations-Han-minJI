@@ -34,16 +34,15 @@ body {
   box-shadow: 0 0 0 0 #888;
   transform: translateX(0) translateY(0);
   transition: all 0.3s ease-in ;
-}
 
-#btn1:hover{
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  box-shadow: 6px 6px 0 black;
-  transform: translateX(-5px) translateY(-5px);
+  &:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 6px 6px 0 black;
+    transform: translateX(-5px) translateY(-5px);
+  }
 }
-
 
 #btn2{
   background-color: black;
@@ -52,34 +51,32 @@ body {
   position: relative;
   top: 0;
   left: 0;
-}
 
-#btn2:hover{
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  transition: all 0.5s ease;
-  top: -10px;
-  left: -10px;
-}
+  &:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+    top: -10px;
+    left: -10px;
+  }
 
-#btn2::after{
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  transition: all 0.5s ease;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+  }
 
-
-}
-
-#btn2:hover::after{
-  top: 10px;
-  left: 10px;
+  &:hover::after{
+    top: 10px;
+    left: 10px;
+  }
 }
 
 
@@ -92,29 +89,29 @@ body {
   opacity: 1;
 
   transition: all 0.3s linear;
-}
 
-#btn3:hover{
-  opacity: 0.9;
-}
+  &:hover{
+    opacity: 0.7;
+  }
 
-#btn3::before{
-  content: '';
-  position: absolute;
-  background-color: pink;
-  top: 0;
-  left: -20%;
-  width: 10%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  transform: skewX(-20deg) translateX(0); 
-  opacity: 0;
-  transition: all 1s ease;
-}
+  &::before{
+    content: '';
+    position: absolute;
+    background-color: pink;
+    top: 0;
+    left: -20%;
+    width: 10%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    transform: skewX(-20deg) translateX(0); 
+    opacity: 0;
+    transition: all 1s ease;
+  }
 
-#btn3:hover::before{
-  opacity: 1;
-  transform: skewX(-20deg) translateX(2000%);
+  &:hover::before{
+    opacity: 1;
+    transform: skewX(-20deg) translateX(2000%);
+  }
 }
 
 #shape1{
@@ -125,38 +122,42 @@ body {
 
   position: relative;
 
-}
+  &::before{
+    content: 'Hello!';
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
-#shape1::before{
-  content: 'Hello!';
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
+    transition: all 0.7s ease;
 
-  transition: all 0.7s ease;
+  }
 
-}
+  &:hover::before{
+    background-color: yellow;
+    opacity: 1;
+  }
 
-#shape1:hover::before{
-  background-color: yellow;
-  opacity: 1;
 }
 
 
 #figure1{
   position: relative;
-}
 
-#figure1 img{
-  position: relative;
-  z-index: 10;
+  img{
+    position: relative;
+    z-index: 10;
+  }
+
+  &:hover figcaption{
+    transform: translateY(20px);
+  }
 }
 
 figcaption{
@@ -169,10 +170,6 @@ figcaption{
   z-index: 5;
   transform: translateY(-5px);
   transition: transform 0.5s linear
-}
-
-#figure1:hover figcaption{
-  transform: translateY(20px);
 }
 
 
